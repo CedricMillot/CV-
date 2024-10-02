@@ -7,23 +7,9 @@ body {
 
 /* Home.css */
 .page-container {
-  transition: background-color 2s ease; /* Ajustez le temps de transition selon vos besoins */
+  transition: background-color 3s ease; /* Ajustez le temps de transition selon vos besoins */
 }
 
-.intro-title, .home-container, .experience-section, .carousel-container, .skills-title-container {
-  padding: 20px; /* Ajoutez un peu d'espacement */
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.intro-title, .experience-section, .skills-title-container {
-  opacity: 0;
-  transform: translateY(-20px);
-}
 
 /* Home Container --------------------------------------------------------------------------------------------------------------------------------- */
 .home-container {

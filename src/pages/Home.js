@@ -14,9 +14,9 @@ const Home = () => {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setShowPhoto(true), 200),
-      setTimeout(() => setShowTitle(true), 200),
-      setTimeout(() => setShowText(true), 200),
+      setTimeout(() => setShowPhoto(true), 300),
+      setTimeout(() => setShowTitle(true), 300),
+      setTimeout(() => setShowText(true), 300),
     ];
 
     return () => timers.forEach((timer) => clearTimeout(timer));
@@ -24,7 +24,8 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-  
+
+    // Changer la couleur d'arrière-plan selon le défilement
     if (offset < 300) {
       setBackgroundColor('#e0e0e0'); // Gris clair
     } else if (offset < 600) {
@@ -32,21 +33,17 @@ const Home = () => {
     } else if (offset < 1200) {
       setBackgroundColor('#808080'); // Gris
     } else {
-      setBackgroundColor('#404040'); // Gris foncé (remplacez le noir par une nuance de gris foncé)
+      setBackgroundColor('#404040'); // Gris foncé 
     }
-  
-    setShowExperience(offset > 300);
-    setShowTitle(offset <= 350);
-    setShowText(offset <= 350);
-    setShowCarousel(offset > 350);
-    setShowSkillsTitle(offset > 600);
-    setShowLogos(offset > 650);
-    setShowTitle(offset <= 350);
-    setShowText(offset <= 350);
-    setShowPhoto(offset <= 350);
-    setShowTitle(offset <= 350);
-    setShowText(offset <= 350);
-    setShowLogos(offset > 1200);
+
+    // Contrôle de la visibilité des éléments
+    setShowPhoto(offset <= 400);          // Affiche la photo
+    setShowTitle(offset <= 400);          // Affiche le titre
+    setShowText(offset <= 400);           // Affiche le texte
+    setShowExperience(offset > 400 && offset <= 750); // Affiche la section d'expérience
+    setShowCarousel(offset > 400 && offset <= 750);   // Affiche le carousel
+    setShowSkillsTitle(offset > 750);     // Affiche le titre des compétences
+    setShowLogos(offset > 750);           // Affiche les logos
   };
 
   useEffect(() => {
@@ -107,7 +104,6 @@ const Home = () => {
         <h2>Mes Compétences</h2>
       </div>
 
-      {/* Section pour afficher les logos des langages connus */}
       <div className={`logos-container ${showLogos ? 'show' : ''}`}>
         <div className="logos">
           <img src={`${process.env.PUBLIC_URL}/images/logo_js.png`} alt="JavaScript" className={`language-logo ${showLogos ? 'show' : ''}`} />
