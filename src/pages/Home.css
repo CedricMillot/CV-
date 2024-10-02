@@ -1,0 +1,234 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Home Container --------------------------------------------------------------------------------------------------------------------------------- */
+.home-container {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 20px 200px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Page Container --------------------------------------------------------------------------------------------------------------------------------- */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh;
+}
+
+/* Intro Title --------------------------------------------------------------------------------------------------------------------------------- */
+.intro-title {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 2s ease, transform 2s ease;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border: 2px solid #ccc;
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.intro-title.show {
+  opacity: 1;
+  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+/* Intro Section --------------------------------------------------------------------------------------------------------------------------------- */
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 1000px;
+  opacity: 1;
+}
+
+/* Profile Photo --------------------------------------------------------------------------------------------------------------------------------- */
+.profile-photo-container {
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 3s ease, opacity 3s ease;
+  margin-right: 50px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+.profile-photo-container.show {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+.profile-photo {
+  width: 290px;
+  height: auto;
+  border-radius: 5%;
+  transition: transform 1s ease;
+}
+
+.profile-photo-container.show .profile-photo {
+  transform: scale(1.1);
+}
+
+.profile-and-text {
+  display: flex; /* Aligne les éléments en ligne (photo et texte) */
+  align-items: flex-start; /* Aligne les éléments en haut du conteneur */
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+  justify-content: flex-start; /* Aligne le titre en haut */
+  height: 100%; /* Assure que le conteneur prenne toute la hauteur */
+  margin-left: 20px; /* Ajoute de l'espace entre la photo et le texte */
+}
+
+.card {
+  width: 100%; /* Prend toute la largeur du conteneur */
+}
+
+/* Text Section --------------------------------------------------------------------------------------------------------------------------------- */
+.text-section {
+  display: flex;
+  flex-direction: column;
+  height: 300px; /* Ajuste la hauteur selon tes besoins */
+  width: 500px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les effets de survol */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lève légèrement la carte */
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 1);
+}
+
+.card.show {
+  opacity: 1;
+}
+
+/* Title and Text Cards --------------------------------------------------------------------------------------------------------------------------------- */
+.title-card {
+  position: relative;
+  opacity: 0;
+  transform: translateX(200%);
+  transition: transform 2s ease, opacity 0.5s ease;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.title-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-card {
+  position: relative;
+  opacity: 0;
+  transform: translateX(200%);
+  transition: transform 3s ease, opacity 0.5s ease;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.text-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Experience Section --------------------------------------------------------------------------------------------------------------------------------- */
+.background-container {
+  min-height: 80vh;
+}
+
+.experience-section {
+  padding: 25px;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s, transform 2s;
+  text-align: center;
+}
+
+.experience-section.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience-section h2 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0;
+  background-color: #ffffff;
+  display: inline-block;
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
+
+}
+
+/* Carousel --------------------------------------------------------------------------------------------------------------------------------- */
+.carousel-container {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1.5s ease-in-out;
+}
+
+.carousel-container.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Skills Section --------------------------------------------------------------------------------------------------------------------------------- */
+.skills-title-container {
+  padding: 25px;
+  border-radius: 15px;
+  margin: 50px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s, transform 2s;
+  text-align: center;
+}
+
+.skills-title-container.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skills-title-container h2 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0;
+  background-color: #f0f0f0;
+  display: inline-block;
+  background-color: white;
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
+
+}

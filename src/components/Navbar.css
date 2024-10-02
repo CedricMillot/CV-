@@ -1,0 +1,50 @@
+.navbar {
+  background-image: url('/public/images/Fond-navbar.jpg'); /* Chemin vers l'image de fond */
+  background-repeat: repeat; /* Répète l'image */
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la navbar */
+  animation: scroll 30s linear infinite; /* Animation de défilement vertical */
+  position: relative; /* Assure que l'élément est positionné relativement */
+  overflow: hidden; /* Cache toute partie de l'image qui dépasse */
+  padding: 0 !important; /* Annule le padding par défaut */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre légère pour la profondeur */
+}
+
+.nav-link {
+  color: black !important; /* Assure que le texte est en noir */
+  font-weight: bold; /* Met le texte en gras */
+  padding: 10px 15px; /* Ajoute de l'espace autour du texte */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour les effets de survol */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond au survol */
+  color: rgb(0, 0, 0); /* Change la couleur du texte au survol */
+  border-radius: 5px; /* Ajoute un léger arrondi aux bords */
+}
+
+.experience-button {
+  background: none; /* Pas de fond par défaut */
+  border: none; /* Pas de bordure */
+  color: black; /* Assure que le texte est en noir */
+  cursor: pointer; /* Curseur pointer pour indiquer le clic */
+  padding: 10px 15px; /* Ajoute du rembourrage pour un meilleur espace */
+  font-weight: bold; /* Met le texte en gras */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour les effets de survol */
+}
+
+.experience-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond au survol */
+  color: rgb(0, 0, 0); /* Change la couleur du texte au survol */
+  border-radius: 5px; /* Ajoute un léger arrondi aux bords */
+}
+
+/* Définir les keyframes pour l'animation de défilement vertical */
+@keyframes scroll {
+  0% {
+    background-position: 0 0; /* Position de départ (en haut) */
+  }
+  100% {
+    background-position: 0 -100%; /* Fin de la position (vers le bas) */
+  }
+}

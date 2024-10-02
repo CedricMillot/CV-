@@ -1,0 +1,43 @@
+.carousel {
+  position: relative;
+  margin: 20px auto; /* Centrer le carousel */
+  width: 60%; /* Largeur du carousel */
+  border: 5px solid #c5c5c5d3; /* Couleur de la bordure */
+  border-radius: 10px; /* Bords arrondis */
+  overflow: hidden; /* Masquer le débordement */
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-inner img {
+  width: 100%; /* Les images prennent toute la largeur de leur conteneur */
+  height: 500px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Ajuster les images pour remplir le conteneur sans déformer */
+  border-radius: 10px; /* Arrondi des coins des images */
+}
+
+.carousel-caption {
+  background-color: rgba(31, 30, 30, 0.521); /* Fond semi-transparent pour les légendes */
+  padding: 5px 10px; /* Espacement intérieur */
+  border-radius: 5px; /* Arrondi des coins des légendes */
+  width: auto; /* Ajuster la largeur si nécessaire */
+  max-width: 600px; /* Largeur maximale pour les légendes */
+  text-align: center; /* Centrer le texte */
+  position: absolute; /* Positionner en absolu pour un meilleur contrôle */
+  bottom: 20px; /* Ajuster la position par rapport au bas du carousel */
+  left: 50%; /* Centrer horizontalement */
+  transform: translateX(10%); /* Ajuster le décalage pour centrer complètement */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: grayscale(100%); /* Appliquer un filtre gris aux flèches */
+  transform: scale(1); /* Réduire la taille des flèches (ajustez la valeur selon vos besoins) */
+  color: black; /* Définir la couleur des flèches en noir */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Fond sombre au survol */
+  border-radius: 5px; /* Arrondi des bords au survol */
+  transform: scale(1); /* Augmenter légèrement la taille au survol */
+}
