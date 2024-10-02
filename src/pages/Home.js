@@ -114,7 +114,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div style={{ height: '1000px' }}></div>
+      <div style={{ height: '100px' }}></div>
     </div>
   );
 };
