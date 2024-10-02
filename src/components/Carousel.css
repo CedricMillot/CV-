@@ -1,7 +1,7 @@
 .carousel {
   position: relative;
   margin: 20px auto; /* Centrer le carousel */
-  width: 60%; /* Largeur du carousel */
+  width: 55%; /* Largeur du carousel */
   border: 5px solid #c5c5c5d3; /* Couleur de la bordure */
   border-radius: 10px; /* Bords arrondis */
   overflow: hidden; /* Masquer le débordement */

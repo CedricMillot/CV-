@@ -9,7 +9,7 @@ const Home = () => {
   const [showExperience, setShowExperience] = useState(false);
   const [showCarousel, setShowCarousel] = useState(false);
   const [showSkillsTitle, setShowSkillsTitle] = useState(false);
-  const [moveOut, setMoveOut] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff'); // Couleur par défaut
 
   useEffect(() => {
     const timers = [
@@ -23,7 +23,17 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setMoveOut(offset > 500);
+
+    if (offset < 150) {
+      setBackgroundColor('#ffffff'); // Couleur pour l'introduction
+    } else if (offset < 400) {
+      setBackgroundColor('#f0f0f0'); // Couleur pour la section d'expérience
+    } else if (offset < 900) {
+      setBackgroundColor('#e0e0e0'); // Couleur pour la section carousel
+    } else {
+      setBackgroundColor('#d0d0d0'); // Couleur pour la section des compétences
+    }
+
     setShowExperience(offset > 150);
     setShowCarousel(offset > 400);
     setShowSkillsTitle(offset > 900);
@@ -40,7 +50,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor, transition: 'background-color 0.5s ease' }}>
       <div className="page-container">
         <div className={`intro-title ${showTitle ? 'show' : ''}`}>
           <h1>Bienvenue sur mon CV</h1>
@@ -49,7 +59,7 @@ const Home = () => {
           <div className="intro-section">
             <div className="profile-and-text">
               <div
-                className={`profile-photo-container ${showPhoto ? 'show' : ''} ${moveOut ? 'move-out' : ''}`}
+                className={`profile-photo-container ${showPhoto ? 'show' : ''}`}
               >
                 <img
                   src={`${process.env.PUBLIC_URL}/images/photo.jpg`}
@@ -58,10 +68,10 @@ const Home = () => {
                 />
               </div>
               <div className="text-section">
-                <div className={`card title-card ${showTitle ? 'show' : ''} ${moveOut ? 'move-out' : ''}`}>
+                <div className={`card title-card ${showTitle ? 'show' : ''}`}>
                   <h2>Cédric Millot</h2>
                 </div>
-                <div className={`card text-card ${showText ? 'show' : ''} ${moveOut ? 'move-out' : ''}`}>
+                <div className={`card text-card ${showText ? 'show' : ''}`}>
                   <p>
                     Bonjour et bienvenue sur mon CV en ligne !
                     <br />
@@ -79,14 +89,14 @@ const Home = () => {
       </div>
 
       <div className="background-container">
-  <div id="experience-section" className={`experience-section ${showExperience ? 'show' : ''}`}>
-    <h2>Mes Expériences</h2>
-  </div>
+        <div id="experience-section" className={`experience-section ${showExperience ? 'show' : ''}`}>
+          <h2>Mes Expériences</h2>
+        </div>
 
-  <div className={`carousel-container ${showCarousel ? 'show' : ''}`}>
-    <Carousel isVisible={showCarousel} />
-  </div>
-</div>
+        <div className={`carousel-container ${showCarousel ? 'show' : ''}`}>
+          <Carousel isVisible={showCarousel} />
+        </div>
+      </div>
 
       <div className={`skills-title-container ${showSkillsTitle ? 'show' : ''}`}>
         <h2>Mes Compétences</h2>

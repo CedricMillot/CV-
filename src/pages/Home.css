@@ -5,6 +5,26 @@ body {
   min-height: 100vh;
 }
 
+/* Home.css */
+.page-container {
+  transition: background-color 0.5s ease;
+}
+
+.intro-title, .home-container, .experience-section, .carousel-container, .skills-title-container {
+  padding: 20px; /* Ajoutez un peu d'espacement */
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.intro-title, .experience-section, .skills-title-container {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 /* Home Container --------------------------------------------------------------------------------------------------------------------------------- */
 .home-container {
   max-width: 100%;
@@ -27,6 +47,13 @@ body {
 }
 
 /* Intro Title --------------------------------------------------------------------------------------------------------------------------------- */
+
+.intro-title h1 {
+  font-family: "Playwrite DE Grund", cursive;
+  font-size: 60px; /* Changez la taille selon vos préférences */
+}
+
+
 .intro-title {
   position: relative;
   opacity: 0;
@@ -36,7 +63,6 @@ body {
   margin-bottom: 50px;
   border: 2px solid #ccc;
   padding: 15px;
-  font-size: 24px;
   text-align: center;
   border-radius: 15px;
 }
@@ -94,6 +120,8 @@ body {
 .profile-and-text {
   display: flex; /* Aligne les éléments en ligne (photo et texte) */
   align-items: flex-start; /* Aligne les éléments en haut du conteneur */
+  font-family: "Playwrite DE Grund", cursive;
+  font-size: 15px; /* Changez la taille selon vos préférences */
 }
 
 .text-section {
@@ -165,7 +193,7 @@ body {
 
 /* Experience Section --------------------------------------------------------------------------------------------------------------------------------- */
 .background-container {
-  min-height: 80vh;
+  min-height: 60vh;
 }
 
 .experience-section {
@@ -175,6 +203,8 @@ body {
   transform: translateX(100%);
   transition: opacity 0.5s, transform 2s;
   text-align: center;
+  font-family: "Playwrite DE Grund", cursive;
+  font-size: 15px; /* Changez la taille selon vos préférences */
 }
 
 .experience-section.show {
@@ -209,11 +239,13 @@ body {
 .skills-title-container {
   padding: 25px;
   border-radius: 15px;
-  margin: 50px;
+  margin: 20px;
   opacity: 0;
   transform: translateX(100%);
   transition: opacity 0.5s, transform 2s;
   text-align: center;
+  font-family: "Playwrite DE Grund", cursive;
+  font-size: 15px; /* Changez la taille selon vos préférences */
 }
 
 .skills-title-container.show {
