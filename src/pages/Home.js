@@ -9,7 +9,8 @@ const Home = () => {
   const [showExperience, setShowExperience] = useState(false);
   const [showCarousel, setShowCarousel] = useState(false);
   const [showSkillsTitle, setShowSkillsTitle] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff'); // Couleur par défaut
+  const [showLogos, setShowLogos] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
 
   useEffect(() => {
     const timers = [
@@ -23,23 +24,29 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-
-    if (offset < 150) {
-      setBackgroundColor('#ffffff'); // Couleur pour l'introduction
-    } else if (offset < 400) {
-      setBackgroundColor('#f0f0f0'); // Couleur pour la section d'expérience
-    } else if (offset < 900) {
-      setBackgroundColor('#e0e0e0'); // Couleur pour la section carousel
+  
+    if (offset < 300) {
+      setBackgroundColor('#e0e0e0'); // Gris clair
+    } else if (offset < 600) {
+      setBackgroundColor('#b0b0b0'); // Gris moyen
+    } else if (offset < 1200) {
+      setBackgroundColor('#808080'); // Gris
     } else {
-      setBackgroundColor('#d0d0d0'); // Couleur pour la section des compétences
+      setBackgroundColor('#404040'); // Gris foncé (remplacez le noir par une nuance de gris foncé)
     }
-
-    setShowExperience(offset > 150);
-    setShowCarousel(offset > 400);
-    setShowSkillsTitle(offset > 900);
+  
+    setShowExperience(offset > 300);
+    setShowTitle(offset <= 350);
+    setShowText(offset <= 350);
+    setShowCarousel(offset > 350);
+    setShowSkillsTitle(offset > 600);
+    setShowLogos(offset > 650);
     setShowTitle(offset <= 350);
     setShowText(offset <= 350);
     setShowPhoto(offset <= 350);
+    setShowTitle(offset <= 350);
+    setShowText(offset <= 350);
+    setShowLogos(offset > 1200);
   };
 
   useEffect(() => {
@@ -58,9 +65,7 @@ const Home = () => {
         <div className="home-container">
           <div className="intro-section">
             <div className="profile-and-text">
-              <div
-                className={`profile-photo-container ${showPhoto ? 'show' : ''}`}
-              >
+              <div className={`profile-photo-container ${showPhoto ? 'show' : ''}`}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/photo.jpg`}
                   alt="Cédric Millot"
@@ -100,6 +105,17 @@ const Home = () => {
 
       <div className={`skills-title-container ${showSkillsTitle ? 'show' : ''}`}>
         <h2>Mes Compétences</h2>
+      </div>
+
+      {/* Section pour afficher les logos des langages connus */}
+      <div className={`logos-container ${showLogos ? 'show' : ''}`}>
+        <div className="logos">
+          <img src={`${process.env.PUBLIC_URL}/images/logo_js.png`} alt="JavaScript" className={`language-logo ${showLogos ? 'show' : ''}`} />
+          <img src={`${process.env.PUBLIC_URL}/images/logo_react.png`} alt="React" className={`language-logo ${showLogos ? 'show' : ''}`} />
+          <img src={`${process.env.PUBLIC_URL}/images/logo_css.png`} alt="CSS" className={`language-logo ${showLogos ? 'show' : ''}`} />
+          <img src={`${process.env.PUBLIC_URL}/images/logo_html.png`} alt="HTML" className={`language-logo ${showLogos ? 'show' : ''}`} />
+          {/* Ajoutez d'autres logos si nécessaire */}
+        </div>
       </div>
 
       <div style={{ height: '1000px' }}></div>

@@ -7,7 +7,7 @@ body {
 
 /* Home.css */
 .page-container {
-  transition: background-color 0.5s ease;
+  transition: background-color 2s ease; /* Ajustez le temps de transition selon vos besoins */
 }
 
 .intro-title, .home-container, .experience-section, .carousel-container, .skills-title-container {
@@ -263,4 +263,32 @@ body {
   background-color: white;
   box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
 
+}
+
+.logos-container {
+  text-align: center;
+  margin: 50px 0;
+  opacity: 0; 
+  transform: translateY(250px); 
+  transition: opacity 5s ease, transform 5s ease; /* Assurez-vous que la transition est définie ici */
+}
+
+.language-logo {
+  width: 200px; /* Ajustez la taille selon vos préférences */
+  height: auto;
+  margin: 0 10px; /* Espace entre les logos */
+  border: 2px solid #ccc; /* Couleur et épaisseur de la bordure pour chaque logo */
+  border-radius: 10px; /* Arrondi des coins */
+  padding: 5px; /* Espacement intérieur du cadre */
+  background-color: #f9f9f9; /* Couleur de fond (facultatif) */
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+.logos-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.language-logo:hover {
+  transform: scale(1.1); /* Ajoute un effet au survol */
 }
